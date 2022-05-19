@@ -1,0 +1,27 @@
+{
+  "name": "goit-nodejs-hm-01",
+  "version": "1.0.0",
+  "description": "CLI app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "start:dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albert95gt/goit-nodejs-hm-01.git"
+  },
+  "author": "Albert Takacs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albert95gt/goit-nodejs-hm-01/issues"
+  },
+  "homepage": "https://github.com/albert95gt/goit-nodejs-hm-01#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
