@@ -25,12 +25,19 @@ async function addContact(name, email, phone) {
   const contacts = await listContacts();
   contacts.push(newContact);
   await fs.writeFile(contactsPath, JSON.stringify(contacts));
+  console.log('Added new contact:', newContact);
 }
 
 async function removeContact(contactId) {
   const contacts = await listContacts();
-  const updatedContacts = contacts.filter(({ id }) => id !== contactId);
-  await fs.writeFile(contactsPath, JSON.stringify(updatedContacts));
+  const index = contacts.findIndex(contact => contact.id === contactId);
+
+  const deletedContact = contacts[index];
+  if (index !== -1) {
+    contacts.splice(index, 1);
+    await fs.writeFile(contactsPath, JSON.stringify(contacts));
+  }
+  return deletedContact ? deletedContact : null;
 }
 
 module.exports = {
